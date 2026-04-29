@@ -28,9 +28,13 @@ Este documento descreve os requisitos para um plano de execução ("ExecPlan"), 
 
 ## Como usar ExecPlans e PLANS.md
 
-Ao criar uma especificação executável (ExecPlan), siga o PLANS.md **à risca**. Se ele não estiver no seu contexto, releia completamente o arquivo PLANS.md. Seja cuidadoso ao ler (e reler) o material para produzir uma especificação precisa.
+Ao criar uma especificação executável (ExecPlan), siga o arquivo PLANS.md à risca. Se não estiver no seu contexto, refresque sua memória lendo o arquivo PLANS.md inteiro. Seja minucioso na leitura (e releitura) do material de origem para produzir uma especificação precisa. Ao criar uma especificação, comece pelo esqueleto e desenvolva-a à medida que realiza sua pesquisa.
 
-Ao implementar um ExecPlan, não peça "próximos passos" ao usuário; simplesmente avance para o próximo marco. Mantenha todas as seções atualizadas.
+Ao implementar uma especificação executável (ExecPlan), não solicite ao usuário os "próximos passos"; simplesmente prossiga para o próximo marco. Mantenha todas as seções atualizadas, adicione ou divida entradas na lista a cada parada para declarar de forma clara o progresso realizado e os próximos passos. Resolva ambiguidades de forma autônoma e faça commits com frequência.
+
+Ao discutir uma especificação executável (ExecPlan), registre as decisões em um log na especificação para fins de registro futuro; deve ficar inequivocamente claro o motivo de qualquer alteração na especificação. Os ExecPlans são documentos vivos e deve sempre ser possível reiniciar a partir do ExecPlan, sem qualquer outro trabalho.
+
+Ao pesquisar um projeto com requisitos complexos ou incógnitas significativas, utilize marcos para implementar provas de conceito, "implementações de teste", etc., que permitam validar a viabilidade da proposta do usuário. Leia o código-fonte das bibliotecas, encontrando-as ou adquirindo-as, pesquise a fundo e inclua protótipos para orientar uma implementação mais completa.
 
 ---
 
@@ -38,11 +42,15 @@ Ao implementar um ExecPlan, não peça "próximos passos" ao usuário; simplesme
 
 ### REGRAS NÃO NEGOCIÁVEIS:
 
-- Todo ExecPlan deve ser auto-contido
-- Deve ser um documento vivo
-- Deve permitir execução por iniciantes
-- Deve gerar comportamento funcional real
-- Todo termo técnico deve ser explicado
+* Todo Plano de Execução deve ser totalmente autossuficiente. Autossuficiente significa que, em sua forma atual, ele contém todo o conhecimento e as instruções necessárias para que um iniciante tenha sucesso.
+
+* Todo Plano de Execução é um documento vivo. Os colaboradores devem revisá-lo à medida que o progresso é feito, novas descobertas ocorrem e as decisões de design são finalizadas. Cada revisão deve permanecer totalmente autossuficiente.
+
+* Todo Plano de Execução deve permitir que um iniciante completo implemente o recurso de ponta a ponta sem conhecimento prévio deste repositório.
+
+* Todo Plano de Execução deve produzir um comportamento comprovadamente funcional, e não meramente alterações de código para "atender a uma definição".
+
+* Todo Plano de Execução deve definir todos os termos técnicos em linguagem clara ou não utilizá-los.
 
 ---
 
