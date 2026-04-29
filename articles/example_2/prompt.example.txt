@@ -1,0 +1,21 @@
+Leia completamente o arquivo ExecPlan abaixo e execute ele do início ao fim.
+
+Regras obrigatórias:
+
+- Não pare no meio
+- Não peça confirmação
+- Não pergunte próximos passos
+- Siga todos os passos até finalizar completamente o plano
+- Implemente todos os endpoints
+- Execute validações
+- Atualize a seção Progress conforme avança
+- Atualize Decision Log se necessário
+- Ao final, preencha Outcomes & Retrospective
+
+Se encontrar ambiguidades, resolva sozinho.
+
+Objetivo final:
+Sistema funcionando com todos os endpoints do CRUD + autenticação.
+
+ExecPlan:
+PLAINS.md
