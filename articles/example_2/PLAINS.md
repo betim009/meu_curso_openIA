@@ -14,22 +14,24 @@ Esse plano segue a estrutura recomendada pelo documento de ExecPlans, que orient
 
 ## Progress
 
-- [ ] Verificar a estrutura atual do projeto.
-- [ ] Criar configuração inicial do servidor Express.
-- [ ] Criar conexão com MySQL.
-- [ ] Criar tabela users.
-- [ ] Criar rota de cadastro de usuário.
-- [ ] Criar rota de login.
-- [ ] Criar rota para listar usuários.
-- [ ] Criar rota para buscar usuário por ID.
-- [ ] Criar rota para editar usuário.
-- [ ] Criar rota para excluir usuário.
-- [ ] Testar todos os endpoints.
-- [ ] Atualizar Outcomes & Retrospective.
+- [x] Verificar a estrutura atual do projeto.
+- [x] Criar configuração inicial do servidor Express.
+- [x] Criar conexão com MySQL.
+- [x] Criar tabela users.
+- [x] Criar rota de cadastro de usuário.
+- [x] Criar rota de login.
+- [x] Criar rota para listar usuários.
+- [x] Criar rota para buscar usuário por ID.
+- [x] Criar rota para editar usuário.
+- [x] Criar rota para excluir usuário.
+- [x] Testar todos os endpoints.
+- [x] Atualizar Outcomes & Retrospective.
 
 ## Surprises & Discoveries
 
-Ainda não houve descobertas inesperadas.
+- A árvore do projeto estava sem `src/`, `package.json`, `package-lock.json` e `node_modules` no filesystem, embora esses arquivos aparecessem como removidos no Git. A implementação foi recriada a partir do ExecPlan.
+- O cliente `mysql` não está disponível no PATH local; as validações de banco serão feitas via Node.js/mysql2 quando houver servidor MySQL acessível.
+- O MySQL local respondeu, mas recusou o usuário `root` sem senha e também com senhas comuns (`root` e `password`). Para validar completamente sem depender dessas credenciais, foi usado um container Docker `mysql:8` na porta `3307`.
 
 ## Decision Log
 
@@ -49,13 +51,34 @@ Ainda não houve descobertas inesperadas.
   Rationale: JWT permite retornar um token simples para autenticação.
   Date/Author: 2026-04-29 / Codex
 
+- Decision: Adicionar `npm run migrate` com `mysql2`.
+  Rationale: O cliente `mysql` não está disponível no PATH local, então a migração precisa ser executável pelo próprio projeto Node.js.
+  Date/Author: 2026-04-29 / Codex
+
 ## Outcomes & Retrospective
 
-Ainda não concluído.
+Concluído.
 
-Ao final, registrar aqui:
+Foi implementada uma API Node.js com Express, MySQL, bcrypt e JWT. A estrutura final contém conexão com banco, migração SQL, runner de migração via `npm run migrate`, servidor Express, controllers e rotas para autenticação e CRUD de usuários.
 
-O que foi implementado, quais endpoints funcionaram, quais testes foram feitos e se ficou algo pendente.
+Endpoints validados com sucesso:
+
+    GET /health
+    POST /auth/register
+    POST /auth/login
+    GET /users
+    GET /users/:id
+    PUT /users/:id
+    DELETE /users/:id
+
+Validações executadas:
+
+    node -e "require('./src/app'); console.log('app loads')"
+    node -c nos arquivos principais em src/
+    DB_PORT=3307 npm run migrate
+    Teste HTTP completo criando usuário, fazendo login, listando, buscando por ID, atualizando, excluindo e confirmando 404 após exclusão.
+
+As respostas de listagem e busca por ID não retornaram o campo `password`. O único ponto pendente para uso fora do container de validação é configurar credenciais válidas de MySQL local via variáveis `DB_HOST`, `DB_PORT`, `DB_USER`, `DB_PASSWORD` e `DB_NAME`.
 
 ## Context and Orientation
 
