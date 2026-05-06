@@ -59,15 +59,8 @@ O propósito/purpose e a intenção/intent vêm em primeiro lugar. Comece explic
 
 O agente que executa o seu plano pode listar arquivos, ler arquivos, pesquisar, executar o projeto e rodar testes. Ele não possui nenhum contexto anterior e não consegue inferir o que você quis dizer com base em etapas anteriores. Repita qualquer suposição da qual você dependa. Não aponte para blogs ou documentações externas; se algum conhecimento for necessário, inclua-o diretamente no plano com suas próprias palavras. Se um ExecPlan depender de outro ExecPlan anterior e esse arquivo estiver presente no repositório, você pode referenciá-lo. Caso contrário, você deve incluir todo o contexto relevante desse plano dentro do atual.
 
----
-
 ## Formatação
-
-- Um único bloco markdown
-- Sem blocos de código internos
-- Usar títulos corretamente
-
----
+O formato e a estrutura são simples e rigorosos. Cada ExecPlan deve ser um único bloco de código delimitado, identificado como md, que começa e termina com três crases (```). Não aninhe (não coloque) outros blocos de três crases dentro dele; quando precisar mostrar comandos, saídas de terminal, diffs ou código, apresente-os como blocos indentados dentro desse único bloco. Use indentação para dar clareza, em vez de blocos de código dentro do ExecPlan, para evitar fechar o bloco principal antes da hora. Use duas quebras de linha após cada título, utilize #, ## e assim por diante, e utilize a sintaxe correta para listas ordenadas e não ordenadas.
 
 ## Diretrizes
 

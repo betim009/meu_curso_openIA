@@ -1,0 +1,265 @@
+:root {
+  color: #303033;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+a {
+  color: #6e6e72;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #147ee6;
+}
+
+.auth-shell {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: minmax(0, 60%) minmax(420px, 40%);
+}
+
+.brand-panel {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 28% 12%, rgba(74, 177, 255, 0.32), transparent 34%),
+    linear-gradient(180deg, #0b8cf2 0%, #0057bd 55%, #00247c 100%);
+}
+
+.orbit {
+  position: absolute;
+  left: -120px;
+  bottom: -350px;
+  width: 820px;
+  height: 820px;
+  border: 3px solid rgba(0, 145, 255, 0.85);
+  border-radius: 50%;
+}
+
+.orbit-two {
+  left: 120px;
+  bottom: -420px;
+}
+
+.form-panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px;
+  background: #ffffff;
+}
+
+.auth-form {
+  width: min(100%, 430px);
+}
+
+.auth-form h1 {
+  margin: 0 0 14px;
+  font-size: clamp(2.4rem, 4vw, 3.4rem);
+  font-weight: 800;
+  letter-spacing: 0;
+}
+
+.auth-form p {
+  margin: 0 0 58px;
+  font-size: 2rem;
+  color: #3c3c40;
+}
+
+.auth-stack {
+  display: grid;
+  gap: 24px;
+}
+
+.input-shell {
+  display: grid;
+  grid-template-columns: 36px 1fr;
+  align-items: center;
+  min-height: 84px;
+  padding: 0 30px;
+  border: 1px solid #e7e7e7;
+  border-radius: 999px;
+  color: #b8b8bb;
+  background: #ffffff;
+}
+
+.input-shell:focus-within {
+  border-color: #1685ed;
+  box-shadow: 0 0 0 4px rgba(20, 126, 230, 0.12);
+}
+
+.input-shell input {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  color: #303033;
+  font-size: 1.35rem;
+  background: transparent;
+}
+
+.input-shell input::placeholder {
+  color: #bdbdc0;
+}
+
+.primary-action,
+.secondary-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 0;
+  font-weight: 500;
+}
+
+.primary-action {
+  min-height: 84px;
+  margin-top: 10px;
+  border-radius: 999px;
+  color: #ffffff;
+  font-size: 1.35rem;
+  background: #147ee6;
+}
+
+.primary-action:disabled {
+  opacity: 0.68;
+}
+
+.auth-links {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  font-size: 1.2rem;
+}
+
+.page-loading {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  color: #4d4d52;
+}
+
+.profile-page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 32px;
+  background:
+    linear-gradient(135deg, rgba(20, 126, 230, 0.96), rgba(0, 36, 124, 0.96)),
+    #147ee6;
+}
+
+.profile-panel {
+  width: min(100%, 640px);
+  padding: 42px;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.22);
+}
+
+.profile-kicker {
+  display: block;
+  margin-bottom: 10px;
+  color: #147ee6;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.profile-panel h1 {
+  margin: 0 0 8px;
+  font-weight: 800;
+}
+
+.profile-panel p {
+  margin: 0;
+  color: #696970;
+}
+
+.profile-data {
+  display: grid;
+  gap: 16px;
+  margin: 36px 0;
+}
+
+.profile-data div {
+  padding: 18px;
+  border: 1px solid #ececef;
+  border-radius: 8px;
+}
+
+.profile-data dt {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 8px;
+  color: #6e6e72;
+  font-weight: 700;
+}
+
+.profile-data dd {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.secondary-action {
+  min-height: 52px;
+  padding: 0 22px;
+  border-radius: 999px;
+  color: #ffffff;
+  background: #147ee6;
+}
+
+@media (max-width: 900px) {
+  .auth-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .brand-panel {
+    min-height: 180px;
+  }
+
+  .form-panel {
+    align-items: flex-start;
+    padding: 38px 24px 48px;
+  }
+
+  .auth-form p {
+    margin-bottom: 34px;
+    font-size: 1.45rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .brand-panel {
+    min-height: 120px;
+  }
+
+  .input-shell,
+  .primary-action {
+    min-height: 68px;
+  }
+
+  .input-shell {
+    grid-template-columns: 30px 1fr;
+    padding: 0 22px;
+  }
+
+  .input-shell input,
+  .primary-action {
+    font-size: 1rem;
+  }
+
+  .profile-panel {
+    padding: 28px;
+  }
+}
