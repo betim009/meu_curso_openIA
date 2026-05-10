@@ -27,8 +27,6 @@ Abaixo encontra-se o documento completo. As instruções neste documento foram c
 
 Este documento descreve os requisitos para um plano de execução ("ExecPlan"), um documento de design que um agente de código pode seguir para entregar uma funcionalidade ou alteração de sistema funcionando. Considere o leitor como um iniciante completo neste repositório: ele possui apenas a árvore de trabalho atual e o único arquivo ExecPlan fornecido. Não há memória de planos anteriores nem contexto externo.
 
----
-
 ## Como usar ExecPlans e PLANS.md
 
 Ao criar uma especificação executável (ExecPlan), siga o arquivo PLANS.md à risca. Se não estiver no seu contexto, refresque sua memória lendo o arquivo PLANS.md inteiro. Seja minucioso na leitura (e releitura) do material de origem para produzir uma especificação precisa. Ao criar uma especificação, comece pelo esqueleto e desenvolva-a à medida que realiza sua pesquisa.
@@ -38,7 +36,6 @@ Ao implementar uma especificação executável (ExecPlan), não solicite ao usu�
 Ao discutir uma especificação executável (ExecPlan), registre as decisões em um log na especificação para fins de registro futuro; deve ficar inequivocamente claro o motivo de qualquer alteração na especificação. Os ExecPlans são documentos vivos e deve sempre ser possível reiniciar a partir do ExecPlan, sem qualquer outro trabalho.
 
 Ao pesquisar um projeto com requisitos complexos ou incógnitas significativas, utilize marcos para implementar provas de conceito, "implementações de teste", etc., que permitam validar a viabilidade da proposta do usuário. Leia o código-fonte das bibliotecas, encontrando-as ou adquirindo-as, pesquise a fundo e inclua protótipos para orientar uma implementação mais completa.
-
 
 ## Requisitos
 
@@ -60,7 +57,7 @@ O agente que executa o seu plano pode listar arquivos, ler arquivos, pesquisar, 
 
 ## Formatação
 
-O formato e a estrutura são simples e rigorosos. Cada ExecPlan deve ser um único bloco de código delimitado, identificado como md, que começa e termina com três crases (```). Não aninhe (não coloque) outros blocos de três crases dentro dele; quando precisar mostrar comandos, saídas de terminal, diffs ou código, apresente-os como blocos indentados dentro desse único bloco. Use indentação para dar clareza, em vez de blocos de código dentro do ExecPlan, para evitar fechar o bloco principal antes da hora. Use duas quebras de linha após cada título, utilize #, ## e assim por diante, e utilize a sintaxe correta para listas ordenadas e não ordenadas.
+O formato e a estrutura são simples e rigorosos. Cada ExecPlan deve ser um único bloco de código delimitado, identificado como md, que começa e termina com três crases (\`\`\`). Não aninhe (não coloque) outros blocos de três crases dentro dele; quando precisar mostrar comandos, saídas de terminal, diffs ou código, apresente-os como blocos indentados dentro desse único bloco. Use indentação para dar clareza, em vez de blocos de código dentro do ExecPlan, para evitar fechar o bloco principal antes da hora. Use duas quebras de linha após cada título, utilize #, ## e assim por diante, e utilize a sintaxe correta para listas ordenadas e não ordenadas.
 
 ## Diretrizes
 
@@ -97,65 +94,66 @@ Todo ExecPlan deve conter:
 - Surprises & Discoveries
 - Decision Log
 - Outcomes & Retrospective
+~~~
 
----
+## `Estrutura de um ExecPlan`
 
-## Estrutura de um ExecPlan
+    # <Short, action-oriented description> | <Descrição curta e objetiva>
+    
+    # Purpose / Big Picture
 
-## Purpose / Big Picture
+    Explica o objetivo
 
-Explica o objetivo
+    ## Progress
 
-## Progress
+    Lista de progresso
 
-Lista de progresso
+    ## Surprises & Discoveries
 
-## Surprises & Discoveries
+    Descobertas
 
-Descobertas
+    ## Decision Log
 
-## Decision Log
+    Decisões
 
-Decisões
+    ## Outcomes & Retrospective
 
-## Outcomes & Retrospective
+    Resumo final
 
-Resumo final
+    ## Context and Orientation
 
-## Context and Orientation
+    Contexto
 
-Contexto
+    ## Plan of Work
 
-## Plan of Work
+    Plano de execução
 
-Plano de execução
+    ## Concrete Steps
 
-## Concrete Steps
+    Passos práticos
 
-Passos práticos
+    ## Validation and Acceptance
 
-## Validation and Acceptance
+    Validação
 
-Validação
+    ## Idempotence and Recovery
 
-## Idempotence and Recovery
+    Repetição segura
 
-Repetição segura
+    ## Artifacts and Notes
 
-## Artifacts and Notes
+    Logs e exemplos
 
-Logs e exemplos
+    ## Interfaces and Dependencies
 
-## Interfaces and Dependencies
+    Dependências
 
-Dependências
 
----
 
 ## Objetivo Final
 
 Permitir que qualquer pessoa consiga implementar e validar a funcionalidade apenas com este documento.
-~~~
+
 
 url: https://github.com/betim009/openai-cookbook/blob/main/articles/codex_exec_plans.md
 
