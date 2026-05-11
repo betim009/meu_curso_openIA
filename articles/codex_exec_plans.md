@@ -99,7 +99,7 @@ Prefira alterações de código aditivas seguidas por subtrações que mantenham
 ~~~
 
 ## `Estrutura de um ExecPlan`
-
+~~~md
     # <Short, action-oriented description> | <Descrição curta e objetiva>
 
     Este Plano Executivo é um documento vivo. As seções "Progresso"/`Progress`, "Surpresas e Descobertas"/`Surprises & Discoveries`, "Registro de Decisões"/`Decision Log` e "Resultados e Retrospectiva"/`Outcomes & Retrospective` devem ser mantidas atualizadas à medida que o trabalho avança.
@@ -172,7 +172,7 @@ Prefira alterações de código aditivas seguidas por subtrações que mantenham
     pub trait Planner {
     fn plan(&self, observed: &Observed) -> Vec<Action>;
     }
-
+~~~
 
 Seguindo as orientações acima, um único agente sem estado — ou um leigo humano — poderá ler seu Plano Executivo do início ao fim e produzir um resultado funcional e observável. Esse é o padrão: AUTÔNOMO, AUTOSSUFICIENTE, GUIA PARA NOVATOS, FOCADO EM RESULTADOS.
 
