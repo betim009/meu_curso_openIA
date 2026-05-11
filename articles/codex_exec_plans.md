@@ -100,17 +100,17 @@ Prefira alterações de código aditivas seguidas por subtrações que mantenham
 
 ## `Estrutura de um ExecPlan`
 ~~~md
-    # <Short, action-oriented description> | <Descrição curta e objetiva>
+# <Short, action-oriented description> | <Descrição curta e objetiva>
 
-    Este Plano Executivo é um documento vivo. As seções "Progresso"/`Progress`, "Surpresas e Descobertas"/`Surprises & Discoveries`, "Registro de Decisões"/`Decision Log` e "Resultados e Retrospectiva"/`Outcomes & Retrospective` devem ser mantidas atualizadas à medida que o trabalho avança.
+    Este Plano Executivo é um documento vivo. As seções "Progresso"/"Progress", "Surpresas e Descobertas"/"Surprises & Discoveries", "Registro de Decisões"/"Decision Log" e "Resultados e Retrospectiva"/"Outcomes & Retrospective" devem ser mantidas atualizadas à medida que o trabalho avança.
 
     Se o arquivo PLANS.md for incluído no repositório, indique o caminho para esse arquivo aqui a partir da raiz do repositório e observe que este documento deve ser mantido de acordo com o PLANS.md.
-    
-    # Purpose / Big Picture
+
+## Purpose / Big Picture
 
     Explique em poucas frases o que o usuário ganha com essa mudança e como ele poderá vê-la funcionando. Descreva o comportamento visível ao usuário que você irá habilitar.
 
-    ## Progress
+## Progress
 
     Use uma lista com caixas de seleção para resumir as etapas detalhadas. Cada ponto de parada deve ser documentado aqui, mesmo que isso exija dividir uma tarefa parcialmente concluída em duas ("concluída" vs. "restante"). Esta seção deve sempre refletir o estado atual do trabalho.
 
@@ -120,7 +120,7 @@ Prefira alterações de código aditivas seguidas por subtrações que mantenham
 
     Use registros de data e hora para medir as taxas de progresso.
 
-    ## Surprises & Discoveries
+## Surprises & Discoveries
 
     Documente comportamentos inesperados, erros, otimizações ou insights descobertos durante a implementação. Forneça evidências concisas.
 
@@ -128,42 +128,42 @@ Prefira alterações de código aditivas seguidas por subtrações que mantenham
 
     - Evidência: …
 
-    ## Decision Log
+## Decision Log
     Registre todas as decisões tomadas durante a elaboração do plano no seguinte formato:
 
     - Decisão: …
     Justificativa: …
     Data/Autor: …
 
-    ## Outcomes & Retrospective
+## Outcomes & Retrospective
 
     Resuma os resultados, as lacunas e as lições aprendidas nos principais marcos ou na conclusão. Compare o resultado com o objetivo inicial.
 
-    ## Context and Orientation
+## Context and Orientation
 
     Descreva o estado atual relevante para esta tarefa como se o leitor não soubesse nada. Nomeie os arquivos e módulos principais com o caminho completo. Defina qualquer termo não óbvio que você usará. Não faça referência a planos anteriores.
     
-    ## Plan of Work
+## Plan of Work
 
     Descreva, em prosa, a sequência de edições e adições. Para cada edição, nomeie o arquivo e a localização (função, módulo) e o que foi inserido ou alterado. Seja objetivo e conciso.
 
-    ## Concrete Steps
+## Concrete Steps
     
     Indique os comandos exatos a serem executados e o local onde devem ser executados (diretório de trabalho). Quando um comando gerar uma saída, mostre uma breve transcrição esperada para que o leitor possa comparar. Esta seção deve ser atualizada conforme o trabalho avança.
 
-    ## Validation and Acceptance
+## Validation and Acceptance
 
     Descreva como iniciar ou testar o sistema e o que observar. Expresse a aceitação como comportamento, com entradas e saídas específicas. Se houver testes envolvidos, diga "execute <comando de teste do projeto> e espere que <N> seja aprovado; o novo teste <nome> falha antes da alteração e é aprovado depois".
 
-    ## Idempotence and Recovery
+## Idempotence and Recovery
 
     Se as etapas puderem ser repetidas com segurança, indique isso. Se uma etapa for arriscada, forneça uma maneira segura de tentar novamente ou reverter o processo. Mantenha o ambiente limpo após a conclusão.
 
-    ## Artifacts and Notes
+## Artifacts and Notes
 
     Inclua as transcrições, diferenças ou trechos mais importantes como exemplos recuados. Seja conciso e foque no que comprova o sucesso.
 
-    ## Interfaces and Dependencies
+## Interfaces and Dependencies
 
     Seja prescritivo. Nomeie as bibliotecas, módulos e serviços a serem usados ​​e explique o porquê. Especifique os tipos, traits/interfaces e assinaturas de função que devem existir ao final do milestone. Prefira nomes e caminhos estáveis, como `crate::module::function` ou `package.submodule.Interface`. Exemplo:
 
