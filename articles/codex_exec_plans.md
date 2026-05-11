@@ -96,6 +96,7 @@ Cada marco deve ser verificável de forma independente e implementar incremental
 É aceitável — e muitas vezes incentivado — incluir marcos de prototipagem explícitos quando eles reduzem o risco de uma mudança maior. Exemplos: adicionar um operador de baixo nível a uma dependência para validar a viabilidade ou explorar duas ordens de composição enquanto mede os efeitos do otimizador. Mantenha os protótipos aditivos e testáveis. Rotule claramente o escopo como "prototipagem"; descreva como executar e observar os resultados; e declare os critérios para promover ou descartar o protótipo.
 
 Prefira alterações de código aditivas seguidas por subtrações que mantenham os testes passando. Implementações paralelas (por exemplo, manter um adaptador junto com um caminho antigo durante a migração) são aceitáveis ​​quando reduzem o risco ou permitem que os testes continuem passando durante uma grande migração. Descreva como validar ambos os caminhos e como desativar um deles com segurança por meio de testes. Ao trabalhar com várias bibliotecas ou áreas de funcionalidades novas, considere criar protótipos que avaliem a viabilidade dessas funcionalidades _independentemente_ umas das outras, comprovando que a biblioteca externa funciona conforme o esperado e implementa as funcionalidades de que precisamos de forma isolada.
+~~~
 
 ## `Estrutura de um ExecPlan`
 
