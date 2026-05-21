@@ -1,41 +1,51 @@
-# Sistema de Login e Registro
+# Sistema de Login e Registro (Node + MySQL + React)
 
-Aplicação full stack com cadastro, login, rota protegida e perfil do usuário.
+Projeto full-stack com:
 
-## Tecnologias
+- Backend: Node.js + Express + TypeScript + MySQL + JWT
+- Frontend: React + Vite + React Router + Axios + Bootstrap
+- Docker Compose: MySQL + backend + frontend (nginx)
 
-- Backend: Node.js, Express, MySQL, bcrypt, JWT
-- Frontend: React, Vite, Axios, React Router, Bootstrap
-- Infra: Docker Compose, MySQL 8, Nginx
+## Requisitos
 
-## Rodar com Docker
+- Node.js 20+ (para rodar localmente)
+- Docker + Docker Compose (para rodar stack completa)
+
+## Como rodar com Docker (recomendado)
+
+1. Subir tudo:
 
 ```bash
 docker compose up --build
 ```
 
-Depois acesse:
+2. Abrir:
 
-- Frontend: http://localhost:3000
-- Backend health check: http://localhost:3001/health
-- MySQL, se precisar conectar pelo host: localhost:3307
+- Frontend: `http://localhost:5173`
+- Backend health: `http://localhost:8080/api/health`
 
-Para reiniciar o banco do zero:
+3. Fluxo esperado:
+
+- Acessar `/register` → cadastrar
+- Ir para `/login` → logar
+- Redireciona para `/profile` (área protegida)
+- Logout volta para `/login`
+
+Reset total do banco (apaga dados):
 
 ```bash
 docker compose down -v
-docker compose up --build
 ```
 
-## Rodar localmente
+## Como rodar localmente (sem Docker)
 
-Suba um MySQL compatível e crie um banco usando `database/init.sql`.
+Observação: você precisa de um MySQL rodando e um banco/tabela compatíveis com `db/init/001_create_users.sql`.
 
 Backend:
 
 ```bash
 cd backend
-cp .env.example .env
+cp ../.env.example .env  # opcional
 npm install
 npm run dev
 ```
@@ -44,56 +54,35 @@ Frontend:
 
 ```bash
 cd frontend
-cp .env.example .env
 npm install
 npm run dev
 ```
 
-## Testes e build
+## Variáveis de ambiente (backend)
 
-Backend:
-
-```bash
-cd backend
-npm test
-```
-
-Frontend:
-
-```bash
-cd frontend
-npm run build
-```
+- `PORT` (default `8080`)
+- `DB_HOST` / `DB_PORT` / `DB_USER` / `DB_PASSWORD` / `DB_NAME`
+- `JWT_SECRET` (obrigatório em produção)
+- `JWT_EXPIRES_IN` (default `1h`)
+- `CORS_ORIGIN` (default `*`)
 
 ## Endpoints
 
-Criar conta:
+- `GET /api/health` → `{ ok: true }`
+- `POST /api/auth/register` → `{ user }`
+- `POST /api/auth/login` → `{ token, user }`
+- `GET /api/me` (Bearer token) → `{ user }`
+
+## Validações executadas
 
 ```bash
-curl -X POST http://localhost:3001/api/auth/register \
-  -H "Content-Type: application/json" \
-  -d '{"name":"Ada Lovelace","email":"ada@example.com","password":"secret123"}'
+cd backend && npm test
+cd frontend && npm run build
+docker compose config
 ```
 
-Login:
+## Troubleshooting
 
-```bash
-curl -X POST http://localhost:3001/api/auth/login \
-  -H "Content-Type: application/json" \
-  -d '{"email":"ada@example.com","password":"secret123"}'
-```
+- `Docker daemon not running`: inicie o Docker Desktop e rode novamente `docker compose up --build`.
+- `401 unauthorized` em `/api/me`: token ausente/expirado → faça logout/login (ou limpe o `localStorage`).
 
-Perfil protegido:
-
-```bash
-curl http://localhost:3001/api/me \
-  -H "Authorization: Bearer SEU_TOKEN"
-```
-
-## Fluxo esperado
-
-1. Abra `http://localhost:3000/register` e crie uma conta.
-2. Faça login em `http://localhost:3000/login`.
-3. Acesse automaticamente `/profile`.
-4. Confira nome e email carregados pela API protegida.
-5. Clique em sair para remover o token e voltar ao login.
