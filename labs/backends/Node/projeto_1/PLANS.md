@@ -1,93 +1,108 @@
-# PLANS.md — API RESTful em Node.js com Express, Prisma e Repository Pattern
+# PLANS.md — API RESTful em Node.js com Express, Prisma e MySQL
 
 Este ExecPlan é um documento vivo.
 
-Ele deve ser usado para desenvolver uma API RESTful em Node.js usando Express, Prisma ORM e uma arquitetura em camadas baseada em MSC com Service Layer e Repository Pattern.
+Ele deve ser usado para desenvolver uma API RESTful em Node.js usando Express, Prisma ORM e MySQL.
 
 O objetivo não é apenas criar uma API funcionando.
 
 O objetivo principal é criar uma API simples e, ao mesmo tempo, produzir uma documentação didática explicando passo a passo como outro desenvolvedor consegue criar essa mesma API do zero.
 
+A arquitetura usada será:
+
+- MSC;
+- Service Layer;
+- Repository Pattern;
+- Prisma ORM;
+- MySQL.
+
 ---
 
 ## Purpose / Big Picture
 
-O objetivo deste projeto é construir uma API RESTful em Node.js com Express e Prisma.
+O objetivo deste projeto é construir uma API RESTful em Node.js com Express, Prisma e MySQL.
 
-A API será simples, mas organizada de forma profissional.
+A API será organizada em camadas, separando bem as responsabilidades de cada parte do sistema.
 
-Ela terá dois módulos principais:
+A API terá dois módulos principais:
 
 - usuários;
 - produtos.
 
-A API deverá permitir operações básicas de CRUD para produtos e usuários.
+A API deverá permitir operações básicas de CRUD para usuários e produtos.
 
 Além disso, o projeto deverá ter uma documentação explicando:
 
 - quais comandos foram executados;
 - quais dependências foram instaladas;
+- como configurar o MySQL;
+- como configurar o Prisma;
+- como configurar o `.env`;
+- como criar migrations;
+- como rodar seeds;
 - quais pastas foram criadas;
 - quais arquivos foram criados;
 - qual é a responsabilidade de cada arquivo;
 - como funciona a arquitetura MSC;
+- como funciona o Service Layer;
 - como funciona o Repository Pattern;
-- como funciona o Prisma;
-- como rodar migrations;
-- como rodar seeds;
-- como testar as rotas.
+- como testar as rotas da API.
 
-O resultado final esperado é uma API que funcione e que possa ser usada como material didático para outro desenvolvedor recriar o mesmo projeto.
+O resultado final esperado é uma API funcional e uma documentação didática que permita outro desenvolvedor recriar o projeto do zero.
 
 ---
 
 ## Progress
 
-- [ ] Criar pasta `backend`.
-- [ ] Inicializar projeto Node.js com `npm init`.
-- [ ] Instalar dependências principais.
-- [ ] Instalar dependências de desenvolvimento.
-- [ ] Configurar scripts no `package.json`.
-- [ ] Criar arquivo `.env`.
-- [ ] Criar arquivo `.env.example`.
-- [ ] Inicializar Prisma.
-- [ ] Configurar `prisma/schema.prisma`.
-- [ ] Criar model `User` no Prisma.
-- [ ] Criar model `Product` no Prisma.
-- [ ] Rodar primeira migration.
-- [ ] Criar conexão do Prisma em `src/database/prisma.js`.
-- [ ] Criar configuração de ambiente em `src/config/env.js`.
-- [ ] Criar estrutura de pastas do projeto.
-- [ ] Criar módulo de usuários.
-- [ ] Criar módulo de produtos.
-- [ ] Criar repositories.
-- [ ] Criar services.
-- [ ] Criar controllers.
-- [ ] Criar validations.
-- [ ] Criar rotas por módulo.
-- [ ] Criar agregador de rotas em `src/routes/index.js`.
-- [ ] Criar middleware de erro.
-- [ ] Criar classe `AppError`.
-- [ ] Criar middleware de autenticação inicial.
-- [ ] Configurar Express em `src/app.js`.
-- [ ] Configurar servidor em `src/server.js`.
-- [ ] Criar seeds de usuários.
-- [ ] Criar seeds de produtos.
-- [ ] Criar arquivo principal de seed.
-- [ ] Rodar seeds.
-- [ ] Testar rotas de usuários.
-- [ ] Testar rotas de produtos.
-- [ ] Criar `README.md`.
-- [ ] Criar pasta `docs`.
-- [ ] Criar `docs/passo-a-passo.md`.
-- [ ] Documentar comandos usados.
-- [ ] Documentar pastas criadas.
-- [ ] Documentar arquivos criados.
-- [ ] Documentar arquitetura MSC.
-- [ ] Documentar Service Layer.
-- [ ] Documentar Repository Pattern.
-- [ ] Documentar Prisma, migrations e seeds.
-- [ ] Documentar erros comuns.
+- [x] Criar pasta `backend`.
+- [x] Inicializar projeto Node.js com `npm init`.
+- [x] Instalar dependências principais.
+- [x] Instalar dependências de desenvolvimento.
+- [x] Configurar scripts no `package.json`.
+- [x] Criar arquivo `.env`.
+- [x] Criar arquivo `.env.example`.
+- [x] Criar banco de dados MySQL.
+- [x] Configurar `DATABASE_URL` do MySQL.
+- [x] Inicializar Prisma.
+- [x] Configurar `prisma/schema.prisma` com provider `mysql`.
+- [x] Criar model `User` no Prisma.
+- [x] Criar model `Product` no Prisma.
+- [x] Rodar primeira migration.
+- [x] Gerar Prisma Client.
+- [x] Criar conexão Prisma em `src/database/prisma.js`.
+- [x] Criar configuração de ambiente em `src/config/env.js`.
+- [x] Criar estrutura de pastas do projeto.
+- [x] Criar módulo de usuários.
+- [x] Criar módulo de produtos.
+- [x] Criar repositories.
+- [x] Criar services.
+- [x] Criar controllers.
+- [x] Criar validations.
+- [x] Criar rotas por módulo.
+- [x] Criar agregador de rotas em `src/routes/index.js`.
+- [x] Criar middleware de erro.
+- [x] Criar classe `AppError`.
+- [x] Criar middleware de autenticação inicial.
+- [x] Configurar Express em `src/app.js`.
+- [x] Configurar servidor em `src/server.js`.
+- [x] Criar seeds de usuários.
+- [x] Criar seeds de produtos.
+- [x] Criar arquivo principal de seed.
+- [x] Rodar seeds no MySQL.
+- [x] Testar rotas de usuários.
+- [x] Testar rotas de produtos.
+- [x] Criar `README.md`.
+- [x] Criar pasta `docs`.
+- [x] Criar `docs/passo-a-passo.md`.
+- [x] Documentar todos os comandos usados.
+- [x] Documentar configuração do MySQL.
+- [x] Documentar configuração do Prisma.
+- [x] Documentar migrations.
+- [x] Documentar seeds.
+- [x] Documentar arquitetura MSC.
+- [x] Documentar Service Layer.
+- [x] Documentar Repository Pattern.
+- [x] Documentar erros comuns.
 - [ ] Validar se outro desenvolvedor consegue recriar a API seguindo a documentação.
 
 ---
@@ -98,14 +113,23 @@ Esta seção deve ser preenchida durante o desenvolvimento.
 
 Use este espaço para registrar descobertas, problemas e evidências.
 
+- Descoberta: já existia um `mysqld` (Oracle) rodando em `3306` (`/usr/local/mysql/bin/mysqld`), o que impediu o MySQL via Homebrew de subir na porta padrão.
+  Evidência: log de erro do Homebrew MySQL acusando porta `3306` em uso e `ps aux | rg mysqld` mostrando o processo em `/usr/local/mysql/bin/mysqld`.
+
+- Descoberta: para não mexer no MySQL existente, o MySQL do projeto foi configurado para rodar na porta `3307` via `/opt/homebrew/etc/my.cnf`.
+  Evidência: `lsof -iTCP:3307 -sTCP:LISTEN` mostrando o `mysqld` escutando em `3307` e `mysql -h 127.0.0.1 -P 3307 -u root -e "SELECT @@port"` retornando `3307`.
+
 Exemplos:
 
 ```md
 - Descoberta: o Prisma criou automaticamente a pasta `prisma`.
   Evidência: pasta criada após executar `npx prisma init`.
 
-- Descoberta: a migration gerou uma pasta dentro de `prisma/migrations`.
-  Evidência: pasta criada após executar `npx prisma migrate dev`.
+- Descoberta: a conexão com MySQL falhou porque o banco ainda não existia.
+  Evidência: erro exibido ao executar `npx prisma migrate dev`.
+
+- Descoberta: a migration criou as tabelas `User` e `Product`.
+  Evidência: tabelas visualizadas no MySQL após executar a migration.
 
 - Descoberta: o servidor subiu na porta 3001.
   Evidência: mensagem exibida no terminal.
@@ -123,14 +147,17 @@ Registrar aqui qualquer comportamento inesperado, erro ou decisão tomada durant
 - Decisão: usar Express.
   Motivo: é simples, popular e didático para ensinar APIs RESTful.
 
+- Decisão: usar MySQL.
+  Motivo: é um banco relacional muito usado no mercado e facilita o ensino de tabelas, registros e relacionamentos.
+
 - Decisão: usar Prisma.
-  Motivo: facilita a criação de models, migrations, consultas e seeds.
+  Motivo: facilita a comunicação com o banco, criação de models, migrations, queries e seeds.
 
 - Decisão: usar arquitetura MSC.
-  Motivo: separa responsabilidades entre rotas, controllers, services e outras camadas.
+  Motivo: ajuda a separar responsabilidades entre rotas, controllers, services e demais camadas.
 
 - Decisão: usar Repository Pattern.
-  Motivo: centraliza as consultas ao banco de dados em arquivos específicos.
+  Motivo: centraliza as consultas ao banco em uma camada específica.
 
 - Decisão: usar Service Layer.
   Motivo: mantém as regras de negócio fora dos controllers.
@@ -147,6 +174,81 @@ Registrar aqui qualquer comportamento inesperado, erro ou decisão tomada durant
 - Decisão: criar documentação didática em `docs/passo-a-passo.md`.
   Motivo: o objetivo do projeto também é ensinar outro desenvolvedor a recriar a API.
 
+- Decisão: fixar Prisma em `5.22.0` por enquanto.
+  Motivo: o Prisma `7.x` introduz o fluxo com `prisma.config.ts` e exige configuração diferente para `PrismaClient`, o que atrapalha o objetivo didático inicial do projeto. A versão `5.22.0` mantém o fluxo clássico (schema + `.env`) e funcionou com migrations/seed no MySQL.
+
+---
+
+## Validation and Acceptance
+
+Esta seção registra evidências reais (comandos + resultados) de que a API, Prisma e MySQL estão funcionando.
+
+- Comando: `brew install mysql mysql@8.4`
+  Resultado: MySQL instalado via Homebrew (usado `mysql@8.4` para evitar problemas de compatibilidade/autenticação observados com MySQL 9 + servidor existente).
+
+- Comando: `brew services start mysql@8.4` + configuração em `/opt/homebrew/etc/my.cnf` (porta `3307`)
+  Resultado: `mysqld` do projeto rodando em `3307`.
+
+- Comando: `mysql -h 127.0.0.1 -P 3307 -u root -e 'CREATE DATABASE IF NOT EXISTS projeto_1; SHOW DATABASES LIKE \"projeto_1\";'`
+  Resultado: banco `projeto_1` criado/confirmado.
+
+- Comando: `cd backend && npm install`
+  Resultado: dependências instaladas.
+
+- Comando: `cd backend && npm run prisma:generate`
+  Resultado: Prisma Client gerado.
+
+- Comando: `cd backend && npx prisma migrate dev`
+  Resultado: migration aplicada e schema em sync.
+
+- Comando: `cd backend && npm run prisma:seed`
+  Resultado: seed inseriu dados reais (2 usuários e 2 produtos).
+
+- Comando: `cd backend && npm run dev`
+  Resultado: servidor subiu em `http://localhost:3001`.
+
+- Evidência (HTTP):
+  - `GET /api/health` → `{"ok":true}`
+  - `GET /api/users` → retorna usuários seedados.
+  - `GET /api/products` → retorna produtos seedados.
+  - CRUD validado via `POST/PUT/DELETE` em `/api/users` e `POST` em `/api/products` com persistência no MySQL.
+  - Autenticação (opcional): com `API_TOKEN=secret`, `GET /api/products` sem header retorna `401` e com `Authorization: Bearer secret` retorna `200`.
+
+---
+
+## Architecture Map (MSC + Service Layer + Repository Pattern)
+
+Estrutura criada em `backend/src` e responsabilidades:
+
+- `src/server.js`: inicia o servidor HTTP (porta via `PORT`).
+- `src/app.js`: configura o Express (JSON, rotas e middleware de erro).
+- `src/config/env.js`: carrega `.env` e valida variáveis com Zod (`DATABASE_URL`, `PORT`).
+- `src/database/prisma.js`: instancia e exporta `PrismaClient` para acesso ao MySQL.
+- `src/routes/index.js`: agregador de rotas (prefixo `/api`, `health`, módulos).
+- `src/middlewares/errorHandler.js`: trata erros (Zod + `AppError` + fallback 500).
+- `src/middlewares/authMiddleware.js`: autenticação simples por `Bearer` token (ativa somente se `API_TOKEN` existir).
+- `src/utils/AppError.js`: erro de domínio para padronizar status/message.
+
+Módulos:
+
+- `src/modules/users/*`
+  - `user.controller.js`: camada `controller` (req/res) para CRUD de usuários.
+  - `user.service.js`: camada `service` (regras: email único, not found).
+  - `user.repository.js`: camada `repository` (queries Prisma em `User`).
+  - `user.validation.js`: camada `validation` (Zod schemas).
+  - `user.routes.js`: camada `routes` do módulo.
+
+- `src/modules/products/*`
+  - `product.controller.js`: camada `controller` para CRUD de produtos.
+  - `product.service.js`: camada `service` (not found).
+  - `product.repository.js`: camada `repository` (queries Prisma em `Product`).
+  - `product.validation.js`: camada `validation` (Zod schemas).
+  - `product.routes.js`: camada `routes` do módulo.
+
+Fluxo (exemplo `POST /api/users`):
+
+`routes` → `controller` (parse/validate) → `service` (regras) → `repository` (MySQL via Prisma) → resposta JSON.
+
 ---
 
 ## Outcomes & Retrospective
@@ -156,15 +258,15 @@ Esta seção deve ser preenchida no final do projeto.
 Modelo para preencher no encerramento:
 
 ```md
-A API RESTful em Node.js foi criada usando Express, Prisma e arquitetura em camadas.
+A API RESTful em Node.js foi criada usando Express, Prisma e MySQL.
 
 Foram criados os módulos de usuários e produtos.
 
 A estrutura usa controller, service, repository e validation em cada módulo.
 
-O Prisma foi configurado com models, migrations e seeds.
+O Prisma foi configurado com provider MySQL, models, migrations e seeds.
 
-A documentação `docs/passo-a-passo.md` explica como criar o projeto do zero, quais comandos executar, quais arquivos criar e qual a função de cada camada.
+A documentação `docs/passo-a-passo.md` explica como criar o projeto do zero, configurar o MySQL, executar migrations, rodar seeds, criar arquivos e testar as rotas.
 
 As rotas foram testadas e a API executou corretamente.
 ```
@@ -272,13 +374,14 @@ Criar a base do projeto:
 - scripts;
 - `.env`;
 - `.env.example`;
-- Prisma;
 - estrutura de pastas.
 
-### Frente 2 — Banco de dados com Prisma
+### Frente 2 — Banco de dados com MySQL e Prisma
 
 Criar:
 
+- banco de dados MySQL;
+- `DATABASE_URL`;
 - `schema.prisma`;
 - model `User`;
 - model `Product`;
@@ -317,7 +420,12 @@ A documentação deve explicar:
 - o que foi feito;
 - por que foi feito;
 - como executar;
-- como recriar;
+- como configurar MySQL;
+- como criar banco;
+- como configurar Prisma;
+- como rodar migration;
+- como rodar seed;
+- como recriar o projeto;
 - como testar;
 - quais erros podem acontecer.
 
@@ -420,20 +528,36 @@ Registrar em `docs/passo-a-passo.md`:
 
 ---
 
-### 6. Criar arquivos de ambiente
+### 6. Criar banco de dados MySQL
+
+Criar um banco chamado:
+
+```sql
+CREATE DATABASE node_mysql_api;
+```
+
+Registrar em `docs/passo-a-passo.md`:
+
+- o banco precisa existir antes de rodar a migration;
+- o Prisma usará esse banco para criar as tabelas;
+- `node_mysql_api` é o nome do banco usado no projeto.
+
+---
+
+### 7. Criar arquivos de ambiente
 
 Criar `.env`:
 
 ```env
 PORT=3001
-DATABASE_URL="file:./dev.db"
+DATABASE_URL="mysql://root:senha@localhost:3306/node_mysql_api"
 ```
 
 Criar `.env.example`:
 
 ```env
 PORT=3001
-DATABASE_URL="file:./dev.db"
+DATABASE_URL="mysql://USUARIO:SENHA@localhost:3306/node_mysql_api"
 ```
 
 Registrar em `docs/passo-a-passo.md`:
@@ -441,12 +565,15 @@ Registrar em `docs/passo-a-passo.md`:
 - `.env` guarda configurações do ambiente;
 - `.env.example` serve como modelo;
 - `.env` não deve ser enviado com dados sensíveis em projetos reais;
-- `DATABASE_URL` informa onde está o banco;
-- neste projeto inicial será usado SQLite para facilitar.
+- `DATABASE_URL` informa como conectar no MySQL;
+- `root` é o usuário do banco no exemplo;
+- `senha` deve ser substituída pela senha real;
+- `3306` é a porta padrão do MySQL;
+- `node_mysql_api` é o nome do banco.
 
 ---
 
-### 7. Inicializar Prisma
+### 8. Inicializar Prisma
 
 Comando:
 
@@ -462,7 +589,7 @@ Registrar:
 
 ---
 
-### 8. Configurar schema.prisma
+### 9. Configurar schema.prisma com MySQL
 
 Editar `prisma/schema.prisma`:
 
@@ -472,7 +599,7 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "mysql"
   url      = env("DATABASE_URL")
 }
 
@@ -483,34 +610,37 @@ model User {
   password  String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+
+  @@map("users")
 }
 
 model Product {
   id          Int      @id @default(autoincrement())
   name        String
   description String?
-  price       Decimal
+  price       Decimal  @db.Decimal(10, 2)
   stock       Int      @default(0)
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
+
+  @@map("products")
 }
 ```
 
 Registrar:
 
-- `generator client` configura o Prisma Client;
-- `datasource db` configura o banco;
+- `provider = "mysql"` indica que o banco usado é MySQL;
+- `url = env("DATABASE_URL")` pega a conexão do `.env`;
 - `User` representa usuários;
 - `Product` representa produtos;
-- `@id` define chave primária;
-- `@default(autoincrement())` gera id automático;
-- `@unique` impede emails repetidos;
-- `DateTime` guarda datas;
-- `@updatedAt` atualiza a data automaticamente.
+- `@@map("users")` define o nome real da tabela no banco;
+- `@@map("products")` define o nome real da tabela no banco;
+- `@db.Decimal(10, 2)` define preço com duas casas decimais;
+- `@unique` impede emails repetidos.
 
 ---
 
-### 9. Rodar migration
+### 10. Rodar migration
 
 Comando:
 
@@ -520,13 +650,28 @@ npx prisma migrate dev --name init
 
 Registrar:
 
-- migration cria as tabelas no banco;
+- migration cria as tabelas no MySQL;
 - a pasta `prisma/migrations` guarda o histórico;
-- o banco SQLite será criado para desenvolvimento.
+- após a migration, as tabelas `users` e `products` devem existir.
 
 ---
 
-### 10. Criar conexão Prisma
+### 11. Gerar Prisma Client
+
+Comando:
+
+```bash
+npx prisma generate
+```
+
+Registrar:
+
+- esse comando gera o cliente Prisma;
+- o Prisma Client permite fazer consultas no banco usando JavaScript.
+
+---
+
+### 12. Criar conexão Prisma
 
 Criar pasta:
 
@@ -558,7 +703,7 @@ Registrar:
 
 ---
 
-### 11. Criar configuração de ambiente
+### 13. Criar configuração de ambiente
 
 Criar pasta:
 
@@ -591,7 +736,7 @@ Registrar:
 
 ---
 
-### 12. Criar utilitário AppError
+### 14. Criar utilitário AppError
 
 Criar pasta:
 
@@ -628,7 +773,7 @@ Registrar:
 
 ---
 
-### 13. Criar middlewares
+### 15. Criar middlewares
 
 Criar pasta:
 
@@ -690,7 +835,7 @@ Registrar:
 
 ---
 
-### 14. Criar módulo de usuários
+### 16. Criar módulo de usuários
 
 Criar pasta:
 
@@ -981,7 +1126,7 @@ Registrar na documentação:
 
 ---
 
-### 15. Criar módulo de produtos
+### 17. Criar módulo de produtos
 
 Criar pasta:
 
@@ -1251,7 +1396,7 @@ module.exports = productRoutes;
 
 ---
 
-### 16. Criar agregador de rotas
+### 18. Criar agregador de rotas
 
 Criar pasta:
 
@@ -1296,7 +1441,7 @@ Registrar:
 
 ---
 
-### 17. Criar app.js
+### 19. Criar app.js
 
 Criar arquivo:
 
@@ -1335,7 +1480,7 @@ Registrar:
 
 ---
 
-### 18. Criar server.js
+### 20. Criar server.js
 
 Criar arquivo:
 
@@ -1362,7 +1507,7 @@ Registrar:
 
 ---
 
-### 19. Criar seeds
+### 21. Criar seeds
 
 Criar pasta:
 
@@ -1472,13 +1617,13 @@ npm run prisma:seed
 
 Registrar:
 
-- seeds criam dados iniciais;
+- seeds criam dados iniciais no MySQL;
 - `seed.js` chama os seeds separados;
 - isso facilita testar a API com dados prontos.
 
 ---
 
-### 20. Testar API
+### 22. Testar API
 
 Rodar servidor:
 
@@ -1535,21 +1680,21 @@ Body para criar produto:
 
 ---
 
-### 21. Criar README.md
+### 23. Criar README.md
 
 Criar `README.md` com:
 
 ```md
-# API RESTful Node.js
+# API RESTful Node.js + MySQL
 
-API RESTful construída com Node.js, Express, Prisma e arquitetura em camadas.
+API RESTful construída com Node.js, Express, Prisma, MySQL e arquitetura em camadas.
 
 ## Tecnologias
 
 - Node.js
 - Express
 - Prisma
-- SQLite
+- MySQL
 - CORS
 - Dotenv
 
@@ -1557,9 +1702,17 @@ API RESTful construída com Node.js, Express, Prisma e arquitetura em camadas.
 
 ```bash
 npm install
+npx prisma generate
 npx prisma migrate dev
 npm run prisma:seed
 npm run dev
+```
+
+## Configuração do .env
+
+```env
+PORT=3001
+DATABASE_URL="mysql://USUARIO:SENHA@localhost:3306/node_mysql_api"
 ```
 
 ## Rotas
@@ -1587,7 +1740,7 @@ DELETE /api/products/:id
 
 ---
 
-### 22. Criar documentação didática
+### 24. Criar documentação didática
 
 Criar:
 
@@ -1598,7 +1751,7 @@ docs/passo-a-passo.md
 Estrutura obrigatória:
 
 ```md
-# Passo a passo — Criando uma API RESTful com Node.js, Express e Prisma
+# Passo a passo — Criando uma API RESTful com Node.js, Express, Prisma e MySQL
 
 ## 1. O que vamos construir?
 
@@ -1610,45 +1763,49 @@ Estrutura obrigatória:
 
 ## 5. O que é Express?
 
-## 6. O que é Prisma?
+## 6. O que é MySQL?
 
-## 7. O que é arquitetura em camadas?
+## 7. O que é Prisma?
 
-## 8. O que é MSC?
+## 8. O que é arquitetura em camadas?
 
-## 9. O que é Service Layer?
+## 9. O que é MSC?
 
-## 10. O que é Repository Pattern?
+## 10. O que é Service Layer?
 
-## 11. Criando o projeto
+## 11. O que é Repository Pattern?
 
-## 12. Instalando dependências
+## 12. Criando o projeto
 
-## 13. Configurando variáveis de ambiente
+## 13. Instalando dependências
 
-## 14. Configurando Prisma
+## 14. Configurando variáveis de ambiente
 
-## 15. Criando models no Prisma
+## 15. Criando o banco MySQL
 
-## 16. Rodando migrations
+## 16. Configurando Prisma com MySQL
 
-## 17. Criando conexão com banco
+## 17. Criando models no Prisma
 
-## 18. Criando módulo de usuários
+## 18. Rodando migrations
 
-## 19. Criando módulo de produtos
+## 19. Criando conexão com banco
 
-## 20. Criando middlewares
+## 20. Criando módulo de usuários
 
-## 21. Criando rotas
+## 21. Criando módulo de produtos
 
-## 22. Criando seeds
+## 22. Criando middlewares
 
-## 23. Rodando e testando a API
+## 23. Criando rotas
 
-## 24. Erros comuns
+## 24. Criando seeds
 
-## 25. Próximos passos
+## 25. Rodando e testando a API
+
+## 26. Erros comuns
+
+## 27. Próximos passos
 ```
 
 ---
@@ -1658,9 +1815,13 @@ Estrutura obrigatória:
 ### Validação técnica
 
 - [ ] `npm install` executa sem erro.
+- [ ] O banco MySQL `node_mysql_api` existe.
+- [ ] `.env` possui `DATABASE_URL` válida.
 - [ ] `npx prisma generate` executa sem erro.
 - [ ] `npx prisma migrate dev --name init` executa sem erro.
+- [ ] As tabelas `users` e `products` são criadas no MySQL.
 - [ ] `npm run prisma:seed` executa sem erro.
+- [ ] Os dados iniciais aparecem no MySQL.
 - [ ] `npm run dev` sobe o servidor.
 - [ ] `GET /api/health` retorna `{ "status": "ok" }`.
 - [ ] `GET /api/users` retorna usuários.
@@ -1701,11 +1862,13 @@ Estrutura obrigatória:
 
 - [ ] A documentação explica comandos.
 - [ ] A documentação explica dependências.
-- [ ] A documentação explica pastas.
-- [ ] A documentação explica arquivos.
+- [ ] A documentação explica MySQL.
+- [ ] A documentação explica DATABASE_URL.
 - [ ] A documentação explica Prisma.
 - [ ] A documentação explica migrations.
 - [ ] A documentação explica seeds.
+- [ ] A documentação explica pastas.
+- [ ] A documentação explica arquivos.
 - [ ] A documentação explica controller.
 - [ ] A documentação explica service.
 - [ ] A documentação explica repository.
@@ -1735,21 +1898,33 @@ Verificar:
 - se o terminal está dentro da pasta `backend`;
 - se o `package.json` existe.
 
+### Se MySQL não conectar
+
+Verificar:
+
+- se o MySQL está rodando;
+- se o banco `node_mysql_api` existe;
+- se usuário e senha estão corretos;
+- se a porta é `3306`;
+- se a `DATABASE_URL` está correta.
+
 ### Se Prisma não conectar
 
 Verificar:
 
 - se `.env` existe;
 - se `DATABASE_URL` está preenchida;
-- se o `schema.prisma` está usando `env("DATABASE_URL")`;
+- se `schema.prisma` está usando `provider = "mysql"`;
+- se `url = env("DATABASE_URL")`;
 - se `npx prisma generate` foi executado.
 
 ### Se migration falhar
 
 Verificar:
 
+- se o banco MySQL existe;
+- se a conexão está correta;
 - se o schema está válido;
-- se o banco SQLite pode ser criado;
 - se existe erro de sintaxe no `schema.prisma`.
 
 ### Se seed falhar
@@ -1874,6 +2049,20 @@ npm install -D prisma nodemon
 }
 ```
 
+### Banco de dados
+
+Banco esperado:
+
+```sql
+CREATE DATABASE node_mysql_api;
+```
+
+DATABASE_URL esperada:
+
+```env
+DATABASE_URL="mysql://USUARIO:SENHA@localhost:3306/node_mysql_api"
+```
+
 ### Interface HTTP
 
 | Método | Endpoint | Descrição |
@@ -1936,6 +2125,7 @@ O objetivo é entregar:
 
 - API funcionando;
 - arquitetura organizada;
+- MySQL configurado;
 - Prisma configurado;
 - migrations funcionando;
 - seeds funcionando;

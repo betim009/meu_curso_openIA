@@ -10,12 +10,18 @@ Seu objetivo é:
 * instalar dependências;
 * rodar comandos;
 * validar resultados;
+* configurar banco de dados;
+* executar migrations;
+* executar seeds;
+* validar rotas;
 * atualizar progresso;
 * continuar executando o backlog pelo máximo de tempo possível.
 
 O foco principal é:
 
 * API funcionando;
+* MySQL funcionando;
+* Prisma funcionando;
 * arquitetura organizada;
 * documentação reproduzível;
 * execução contínua;
@@ -58,7 +64,8 @@ Regras obrigatórias:
 * rotas;
 * migrations;
 * seeds;
-* conexão com banco.
+* conexão com banco;
+* persistência real no MySQL.
 
 11. Sempre usar execução incremental:
 
@@ -86,6 +93,9 @@ Regras obrigatórias:
 * `prisma generate`
 * `prisma migrate`
 * `prisma seed`
+* conexão com MySQL
+* criação de tabelas
+* inserção de dados reais
 
 19. Sempre registrar erros comuns na documentação.
 20. Nunca encerrar cedo se ainda houver tarefas executáveis.
@@ -117,14 +127,44 @@ Sempre manter a arquitetura:
 
 MSC + Service Layer + Repository Pattern
 
-Ao trabalhar com Prisma:
+Ao trabalhar com Prisma + MySQL, validar obrigatoriamente:
 
-* validar `schema.prisma`;
-* validar migrations;
-* validar Prisma Client;
-* validar seeds;
-* validar conexão com banco;
-* validar queries reais.
+* se o MySQL está rodando;
+* se o banco existe;
+* se a DATABASE_URL está correta;
+* se o Prisma Client foi gerado;
+* se as migrations executaram corretamente;
+* se as tabelas foram criadas;
+* se os seeds inseriram dados reais;
+* se as queries estão funcionando;
+* se as rotas persistem dados no banco real.
+
+Nunca assumir que o banco está funcionando sem validação real.
+
+Sempre registrar:
+
+* comandos executados;
+* resultado das migrations;
+* resultado das seeds;
+* erros de conexão;
+* solução aplicada;
+* evidências de funcionamento.
+
+Sempre validar:
+
+* `npm install`
+* `npx prisma generate`
+* `npx prisma migrate dev`
+* `npm run prisma:seed`
+* `npm run dev`
+* endpoints HTTP reais
+
+Se existir erro de banco:
+
+* registrar evidência;
+* registrar mensagem do erro;
+* registrar solução;
+* continuar execução após correção.
 
 Sempre que finalizar uma etapa:
 
