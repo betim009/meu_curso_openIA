@@ -83,3 +83,8 @@ Email: fabiomoreiradacunha1@gmail.com
 Telefone: 65996900584
 Nome: Fabio Moreira da cunha
 Endereço: Rua prudencio lopes, Bairro:vila alta, numero:355, cidade: Santo Afonso-MT
+
+
+
+Voce deve me entregar um aquivo chamado PLANS.md para download. 
+E um prompt.txt para download, ideal para para executar com documento vivo o PLANS.md por maximo de tempo possivel. 
